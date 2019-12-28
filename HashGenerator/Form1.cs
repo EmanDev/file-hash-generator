@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 using System.IO;
 using System.Security.Cryptography;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace HashGenerator
 {
@@ -19,9 +19,10 @@ namespace HashGenerator
         public Form1()
         {
             InitializeComponent();
-            var materialSkinMananger = MaterialSkinManager.Instance;
-            materialSkinMananger.AddFormToManage(this);
-            materialSkinMananger.Theme = MaterialSkinManager.Themes.DARK;
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
         }
 
         private void Form1_Load(object sender, EventArgs e)
