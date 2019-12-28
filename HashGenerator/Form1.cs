@@ -20,6 +20,7 @@ namespace HashGenerator
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.EnforceBackcolorOnAllComponents = true;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
@@ -27,6 +28,10 @@ namespace HashGenerator
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            saveFileDialog1.Filter = "Text Documents (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
             toolTip1.ShowAlways = true;
             toolTip1.SetToolTip(materialButton1, "Browse the file you want to calcuate the hash.");
             toolTip1.SetToolTip(materialButton8, "Calculate the selected file with the selected hashes.");
@@ -116,9 +121,13 @@ namespace HashGenerator
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            using (StreamWriter writeHash = new StreamWriter(@".\calculated-hashes.txt"))
+            saveFileDialog1.ShowDialog();
+            string exportedPath = saveFileDialog1.FileName;
+            using (StreamWriter writeHash = new StreamWriter(exportedPath))
             {
-                writeHash.WriteLine("-------------------- Calculated Hashes --------------------");
+                writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                writeHash.WriteLine("Calculated hashes of " + openFileDialog1.SafeFileName);
+                writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
                 if (materialTextBox2.Text == "")
                 {
                     writeHash.Write("");
@@ -159,7 +168,9 @@ namespace HashGenerator
                 {
                     writeHash.WriteLine("SHA-512: " + materialTextBox6.Text);
                 }
+                writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
             }
+            MessageBox.Show("Hashes exported at " + exportedPath);
         }
     }
 }
