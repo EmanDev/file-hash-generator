@@ -55,6 +55,14 @@
             this.materialButton8 = new MaterialSkin.Controls.MaterialButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.materialProgressBar2 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.materialProgressBar3 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.materialProgressBar4 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.materialProgressBar5 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker5 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // materialButton1
@@ -107,7 +115,7 @@
             // 
             this.materialCheckbox1.AutoSize = true;
             this.materialCheckbox1.Depth = 0;
-            this.materialCheckbox1.Location = new System.Drawing.Point(9, 164);
+            this.materialCheckbox1.Location = new System.Drawing.Point(9, 146);
             this.materialCheckbox1.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -122,7 +130,7 @@
             // 
             this.materialCheckbox2.AutoSize = true;
             this.materialCheckbox2.Depth = 0;
-            this.materialCheckbox2.Location = new System.Drawing.Point(94, 164);
+            this.materialCheckbox2.Location = new System.Drawing.Point(94, 146);
             this.materialCheckbox2.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -136,17 +144,17 @@
             // materialProgressBar1
             // 
             this.materialProgressBar1.Depth = 0;
-            this.materialProgressBar1.Location = new System.Drawing.Point(13, 129);
+            this.materialProgressBar1.Location = new System.Drawing.Point(9, 258);
             this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar1.Name = "materialProgressBar1";
-            this.materialProgressBar1.Size = new System.Drawing.Size(628, 5);
+            this.materialProgressBar1.Size = new System.Drawing.Size(632, 5);
             this.materialProgressBar1.TabIndex = 4;
             // 
             // materialCheckbox3
             // 
             this.materialCheckbox3.AutoSize = true;
             this.materialCheckbox3.Depth = 0;
-            this.materialCheckbox3.Location = new System.Drawing.Point(185, 164);
+            this.materialCheckbox3.Location = new System.Drawing.Point(185, 146);
             this.materialCheckbox3.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox3.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -161,7 +169,7 @@
             // 
             this.materialCheckbox4.AutoSize = true;
             this.materialCheckbox4.Depth = 0;
-            this.materialCheckbox4.Location = new System.Drawing.Point(294, 164);
+            this.materialCheckbox4.Location = new System.Drawing.Point(294, 146);
             this.materialCheckbox4.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox4.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -176,7 +184,7 @@
             // 
             this.materialCheckbox5.AutoSize = true;
             this.materialCheckbox5.Depth = 0;
-            this.materialCheckbox5.Location = new System.Drawing.Point(404, 164);
+            this.materialCheckbox5.Location = new System.Drawing.Point(404, 146);
             this.materialCheckbox5.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox5.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox5.MouseState = MaterialSkin.MouseState.HOVER;
@@ -192,7 +200,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(13, 143);
+            this.materialLabel1.Location = new System.Drawing.Point(13, 125);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(60, 19);
@@ -206,7 +214,7 @@
             this.materialButton2.DrawShadows = true;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(521, 163);
+            this.materialButton2.Location = new System.Drawing.Point(521, 145);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
@@ -223,7 +231,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(10, 210);
+            this.materialLabel2.Location = new System.Drawing.Point(10, 182);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(57, 19);
@@ -236,7 +244,7 @@
             this.materialTextBox2.Depth = 0;
             this.materialTextBox2.Font = new System.Drawing.Font("Roboto", 12F);
             this.materialTextBox2.Hint = "MD5";
-            this.materialTextBox2.Location = new System.Drawing.Point(9, 232);
+            this.materialTextBox2.Location = new System.Drawing.Point(9, 204);
             this.materialTextBox2.MaxLength = 50;
             this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox2.Multiline = false;
@@ -245,6 +253,7 @@
             this.materialTextBox2.Size = new System.Drawing.Size(566, 50);
             this.materialTextBox2.TabIndex = 12;
             this.materialTextBox2.Text = "";
+            this.materialTextBox2.TextChanged += new System.EventHandler(this.materialTextBox2_TextChanged);
             // 
             // materialButton3
             // 
@@ -253,7 +262,7 @@
             this.materialButton3.DrawShadows = true;
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(582, 238);
+            this.materialButton3.Location = new System.Drawing.Point(582, 210);
             this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
@@ -271,7 +280,7 @@
             this.materialTextBox3.Depth = 0;
             this.materialTextBox3.Font = new System.Drawing.Font("Roboto", 12F);
             this.materialTextBox3.Hint = "SHA-1";
-            this.materialTextBox3.Location = new System.Drawing.Point(9, 288);
+            this.materialTextBox3.Location = new System.Drawing.Point(9, 269);
             this.materialTextBox3.MaxLength = 50;
             this.materialTextBox3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox3.Multiline = false;
@@ -288,7 +297,7 @@
             this.materialButton4.DrawShadows = true;
             this.materialButton4.HighEmphasis = true;
             this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(582, 294);
+            this.materialButton4.Location = new System.Drawing.Point(582, 275);
             this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton4.Name = "materialButton4";
@@ -305,7 +314,7 @@
             this.materialTextBox4.Depth = 0;
             this.materialTextBox4.Font = new System.Drawing.Font("Roboto", 12F);
             this.materialTextBox4.Hint = "SHA-256";
-            this.materialTextBox4.Location = new System.Drawing.Point(9, 344);
+            this.materialTextBox4.Location = new System.Drawing.Point(9, 334);
             this.materialTextBox4.MaxLength = 50;
             this.materialTextBox4.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox4.Multiline = false;
@@ -322,7 +331,7 @@
             this.materialButton5.DrawShadows = true;
             this.materialButton5.HighEmphasis = true;
             this.materialButton5.Icon = null;
-            this.materialButton5.Location = new System.Drawing.Point(582, 350);
+            this.materialButton5.Location = new System.Drawing.Point(582, 340);
             this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton5.Name = "materialButton5";
@@ -339,7 +348,7 @@
             this.materialTextBox5.Depth = 0;
             this.materialTextBox5.Font = new System.Drawing.Font("Roboto", 12F);
             this.materialTextBox5.Hint = "SHA-384";
-            this.materialTextBox5.Location = new System.Drawing.Point(9, 400);
+            this.materialTextBox5.Location = new System.Drawing.Point(9, 399);
             this.materialTextBox5.MaxLength = 50;
             this.materialTextBox5.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox5.Multiline = false;
@@ -356,7 +365,7 @@
             this.materialButton6.DrawShadows = true;
             this.materialButton6.HighEmphasis = true;
             this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(582, 406);
+            this.materialButton6.Location = new System.Drawing.Point(582, 405);
             this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton6.Name = "materialButton6";
@@ -373,7 +382,7 @@
             this.materialTextBox6.Depth = 0;
             this.materialTextBox6.Font = new System.Drawing.Font("Roboto", 12F);
             this.materialTextBox6.Hint = "SHA-512";
-            this.materialTextBox6.Location = new System.Drawing.Point(9, 456);
+            this.materialTextBox6.Location = new System.Drawing.Point(9, 464);
             this.materialTextBox6.MaxLength = 50;
             this.materialTextBox6.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox6.Multiline = false;
@@ -390,7 +399,7 @@
             this.materialButton7.DrawShadows = true;
             this.materialButton7.HighEmphasis = true;
             this.materialButton7.Icon = null;
-            this.materialButton7.Location = new System.Drawing.Point(582, 462);
+            this.materialButton7.Location = new System.Drawing.Point(582, 470);
             this.materialButton7.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton7.Name = "materialButton7";
@@ -420,11 +429,69 @@
             this.materialButton8.UseVisualStyleBackColor = true;
             this.materialButton8.Click += new System.EventHandler(this.materialButton8_Click);
             // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.WorkerReportsProgress = true;
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker2_ProgressChanged);
+            // 
+            // materialProgressBar2
+            // 
+            this.materialProgressBar2.Depth = 0;
+            this.materialProgressBar2.Location = new System.Drawing.Point(9, 323);
+            this.materialProgressBar2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialProgressBar2.Name = "materialProgressBar2";
+            this.materialProgressBar2.Size = new System.Drawing.Size(632, 5);
+            this.materialProgressBar2.TabIndex = 22;
+            // 
+            // materialProgressBar3
+            // 
+            this.materialProgressBar3.Depth = 0;
+            this.materialProgressBar3.Location = new System.Drawing.Point(9, 388);
+            this.materialProgressBar3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialProgressBar3.Name = "materialProgressBar3";
+            this.materialProgressBar3.Size = new System.Drawing.Size(632, 5);
+            this.materialProgressBar3.TabIndex = 23;
+            // 
+            // materialProgressBar4
+            // 
+            this.materialProgressBar4.Depth = 0;
+            this.materialProgressBar4.Location = new System.Drawing.Point(9, 453);
+            this.materialProgressBar4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialProgressBar4.Name = "materialProgressBar4";
+            this.materialProgressBar4.Size = new System.Drawing.Size(632, 5);
+            this.materialProgressBar4.TabIndex = 24;
+            // 
+            // materialProgressBar5
+            // 
+            this.materialProgressBar5.Depth = 0;
+            this.materialProgressBar5.Location = new System.Drawing.Point(9, 518);
+            this.materialProgressBar5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialProgressBar5.Name = "materialProgressBar5";
+            this.materialProgressBar5.Size = new System.Drawing.Size(632, 5);
+            this.materialProgressBar5.TabIndex = 25;
+            // 
+            // backgroundWorker3
+            // 
+            this.backgroundWorker3.WorkerReportsProgress = true;
+            // 
+            // backgroundWorker4
+            // 
+            this.backgroundWorker4.WorkerReportsProgress = true;
+            // 
+            // backgroundWorker5
+            // 
+            this.backgroundWorker5.WorkerReportsProgress = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 523);
+            this.ClientSize = new System.Drawing.Size(654, 530);
+            this.Controls.Add(this.materialProgressBar5);
+            this.Controls.Add(this.materialProgressBar4);
+            this.Controls.Add(this.materialProgressBar3);
+            this.Controls.Add(this.materialProgressBar2);
             this.Controls.Add(this.materialButton8);
             this.Controls.Add(this.materialTextBox6);
             this.Controls.Add(this.materialButton7);
@@ -484,6 +551,14 @@
         private MaterialSkin.Controls.MaterialButton materialButton8;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar2;
+        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar3;
+        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar4;
+        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar5;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker4;
+        private System.ComponentModel.BackgroundWorker backgroundWorker5;
     }
 }
 

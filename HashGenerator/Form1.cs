@@ -35,7 +35,7 @@ namespace HashGenerator
             toolTip1.ShowAlways = true;
             toolTip1.SetToolTip(materialButton1, "Browse the file you want to calcuate the hash.");
             toolTip1.SetToolTip(materialButton8, "Calculate the selected file with the selected hashes.");
-            toolTip1.SetToolTip(materialButton2, "Export calculated hashes into a text file.");
+            toolTip1.SetToolTip(materialButton2, "Export calculated hashes into a file.");
             toolTip1.SetToolTip(materialButton3, "Copy calculated MD5 to clipboard.");
             toolTip1.SetToolTip(materialButton4, "Copy calculated SHA-1 to clipboard.");
             toolTip1.SetToolTip(materialButton5, "Copy calculated SHA-256 to clipboard.");
@@ -45,6 +45,7 @@ namespace HashGenerator
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
+            materialTextBox1.Text = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 materialTextBox1.Text = openFileDialog1.FileName;
@@ -53,15 +54,52 @@ namespace HashGenerator
 
         private void materialButton8_Click(object sender, EventArgs e)
         {
+            materialTextBox2.Text = "";
             if (materialTextBox1.Text == "")
             {
-                MaterialMessageBox.Show("Please select a file to calculate.", "Browse File Path");
+                MessageBox.Show("Please select a file to calculate.", "Browse File Path", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 if (materialCheckbox1.Checked == true)
                 {
                     backgroundWorker1.RunWorkerAsync(materialTextBox1.Text);
+                }
+                else
+                {
+                    materialTextBox2.Text = "MD5 not selected.";
+                }
+                if (materialCheckbox2.Checked == true)
+                {
+                    backgroundWorker2.RunWorkerAsync(materialTextBox1.Text);
+                }
+                else
+                {
+                    materialTextBox3.Text = "SHA-1 not selected.";
+                }
+                if (materialCheckbox3.Checked == true)
+                {
+                    backgroundWorker3.RunWorkerAsync(materialTextBox1.Text);
+                }
+                else
+                {
+                    materialTextBox4.Text = "SHA-256 not selected.";
+                }
+                if (materialCheckbox4.Checked == true)
+                {
+                    backgroundWorker4.RunWorkerAsync(materialTextBox1.Text);
+                }
+                else
+                {
+                    materialTextBox5.Text = "SHA-384 not selected.";
+                }
+                if (materialCheckbox5.Checked == true)
+                {
+                    backgroundWorker5.RunWorkerAsync(materialTextBox1.Text);
+                }
+                else
+                {
+                    materialTextBox6.Text = "SHA-512 not selected.";
                 }
             }
         }
@@ -170,7 +208,22 @@ namespace HashGenerator
                 }
                 writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
             }
-            MessageBox.Show("Hashes exported at " + exportedPath);
+            MessageBox.Show("Hashes exported at " + exportedPath, "Exported Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
+        }
+
+        private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+
+        }
+
+        private void materialTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
