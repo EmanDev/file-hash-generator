@@ -1,0 +1,28 @@
+Error: 
+An unhandled exception of type 'System.Reflection.TargetInvocationException' occurred in mscorlib.dll
+
+
+System.Reflection.TargetInvocationException occurred
+  HResult=-2146232828
+  Message=An exception occurred during the operation, making the result invalid.  Check InnerException for exception details.
+  Source=System
+  StackTrace:
+       at System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary()
+  InnerException: 
+       HResult=-2146233079
+       Message=Cross-thread operation not valid: Control 'materialProgressBar1' accessed from a thread other than the thread it was created on.
+       Source=System.Windows.Forms
+       StackTrace:
+            at System.Windows.Forms.Control.get_Handle()
+            at System.Windows.Forms.Control.SendMessage(Int32 msg, Int32 wparam, Int32 lparam)
+            at System.Windows.Forms.ProgressBar.UpdatePos()
+            at System.Windows.Forms.ProgressBar.set_Value(Int32 value)
+            at HashGenerator.Form1.backgroundWorker1_ProgressChanged(Object sender, ProgressChangedEventArgs e) in C:\Users\User\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\Form1.cs:line 179
+            at System.ComponentModel.BackgroundWorker.OnProgressChanged(ProgressChangedEventArgs e)
+            at System.ComponentModel.BackgroundWorker.ProgressReporter(Object arg)
+            at System.ComponentModel.BackgroundWorker.ReportProgress(Int32 percentProgress, Object userState)
+            at System.ComponentModel.BackgroundWorker.ReportProgress(Int32 percentProgress)
+            at HashGenerator.Form1.backgroundWorker5_DoWork(Object sender, DoWorkEventArgs e) in C:\Users\User\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\Form1.cs:line 395
+            at System.ComponentModel.BackgroundWorker.OnDoWork(DoWorkEventArgs e)
+            at System.ComponentModel.BackgroundWorker.WorkerThreadStart(Object argument)
+       InnerException: 

@@ -142,6 +142,38 @@ namespace HashGenerator
             return hash.ToString();
         }
 
+        private static string MakeHashStringSHA1(byte[] hashBytesSHA1)
+        {
+            StringBuilder hash = new StringBuilder(40);
+            foreach (byte b in hashBytesSHA1)
+                hash.Append(b.ToString("X2").ToUpper());
+            return hash.ToString();
+        }
+
+        private static string MakeHashStringSHA256(byte[] hashBytesSHA256)
+        {
+            StringBuilder hash = new StringBuilder(64);
+            foreach (byte b in hashBytesSHA256)
+                hash.Append(b.ToString("X2").ToUpper());
+            return hash.ToString();
+        }
+
+        private static string MakeHashStringSHA512(byte[] hashbyesSHA512)
+        {
+            StringBuilder hash = new StringBuilder(0);
+            foreach (byte b in hashbyesSHA512)
+                hash.Append(b.ToString("X2").ToUpper());
+            return hash.ToString();
+        }
+
+        private static string MakeHashStringSHA384(byte[] hashbytesSHA384)
+        {
+            StringBuilder hash = new StringBuilder(96);
+            foreach (byte b in hashbytesSHA384)
+                hash.Append(b.ToString("X2").ToUpper());
+            return hash.ToString();
+        }
+
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             materialProgressBar1.Value = e.ProgressPercentage;
@@ -213,17 +245,170 @@ namespace HashGenerator
 
         private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-            
+            string file_path = e.Argument.ToString();
+            byte[] buffer;
+            int bytesRead;
+            long size;
+            long totalBytesRead = 0;
+            using (Stream file = File.OpenRead(file_path))
+            {
+                size = file.Length;
+                using (HashAlgorithm hasher = SHA1.Create())
+                {
+                    do
+                    {
+                        buffer = new byte[4096];
+                        bytesRead = file.Read(buffer, 0, buffer.Length);
+                        totalBytesRead += bytesRead;
+                        hasher.TransformBlock(buffer, 0, bytesRead, null, 0);
+                        backgroundWorker2.ReportProgress((int)((double)totalBytesRead / size * 100));
+                    }
+                    while (bytesRead != 0);
+                    hasher.TransformFinalBlock(buffer, 0, 0);
+                    e.Result = MakeHashStringSHA1(hasher.Hash);
+                }
+            }
         }
 
         private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-
+            materialProgressBar2.Value = e.ProgressPercentage;
         }
 
-        private void materialTextBox2_TextChanged(object sender, EventArgs e)
+        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            materialTextBox3.Text = e.Result.ToString();
+        }
+        
+        private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string PathFile = e.Argument.ToString();
+            byte[] buffer;
+            int bytesRead;
+            long size;
+            long totalbytesRead = 0;
+            using (Stream file = File.OpenRead(PathFile))
+            {
+                size = file.Length;
+                using (HashAlgorithm hasher = SHA256.Create())
+                {
+                    do
+                    {
+                        buffer = new byte[4096];
+                        bytesRead = file.Read(buffer, 0, buffer.Length);
+                        totalbytesRead += bytesRead;
+                        hasher.TransformBlock(buffer, 0, bytesRead, null, 0);
+                        backgroundWorker3.ReportProgress((int)((double)totalbytesRead / size * 100));
+                    }
+                    while (bytesRead != 0);
+                    hasher.TransformFinalBlock(buffer, 0, 0);
+                    e.Result = MakeHashStringSHA256(hasher.Hash);
+                }
+            }
+        }
 
+        private void backgroundWorker3_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            materialProgressBar3.Value = e.ProgressPercentage;
+        }
+
+        private void backgroundWorker3_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            materialTextBox4.Text = e.Result.ToString();
+        }
+
+        private void backgroundWorker4_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string Path_File = e.Argument.ToString();
+            byte[] buffer;
+            int bytesRead;
+            long size;
+            long totalbytesRead = 0;
+            using (Stream file = File.OpenRead(Path_File))
+            {
+                size = file.Length;
+                using (HashAlgorithm hasher = SHA384.Create())
+                {
+                    do
+                    {
+                        buffer = new byte[4096];
+                        bytesRead = file.Read(buffer, 0, buffer.Length);
+                        totalbytesRead += bytesRead;
+                        hasher.TransformBlock(buffer, 0, bytesRead, null, 0);
+                        backgroundWorker4.ReportProgress((int)((double)totalbytesRead / size * 100));
+                    }
+                    while (bytesRead != 0);
+                    hasher.TransformFinalBlock(buffer, 0, 0);
+                    e.Result = MakeHashStringSHA384(hasher.Hash);
+                }
+            }      
+        }
+
+        private void backgroundWorker4_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            materialProgressBar4.Value = e.ProgressPercentage;
+        }
+
+        private void backgroundWorker4_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            materialTextBox5.Text = e.Result.ToString();
+        }
+
+        private void materialButton7_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(materialTextBox6.Text);
+        }
+
+        private void materialButton4_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(materialTextBox3.Text);
+        }
+
+        private void materialButton5_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(materialTextBox4.Text);
+        }
+
+        private void materialButton6_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(materialTextBox5.Text);
+        }
+
+        private void backgroundWorker5_DoWork(object sender, DoWorkEventArgs e)
+        {
+            string file_pathing = e.Argument.ToString();
+            byte[] buffer;
+            int BytesRead;
+            long size;
+            long totalBytesRead = 0;
+            using (Stream file = File.OpenRead(file_pathing))
+                {
+                size = file.Length;
+                using (HashAlgorithm hasher = SHA512.Create())
+                {
+                    do
+                    {
+                        buffer = new byte[4096];
+                        BytesRead = file.Read(buffer, 0, buffer.Length);
+                        totalBytesRead += BytesRead;
+                        hasher.TransformBlock(buffer, 0, BytesRead, null, 0);
+                        backgroundWorker1.ReportProgress((int)((double)totalBytesRead / size * 100));
+                    }
+                    while (BytesRead != 0);
+                    hasher.TransformFinalBlock(buffer, 0, 0);
+                    e.Result = MakeHashStringSHA512(hasher.Hash);
+                }
+            }
+        }
+
+        private void backgroundWorker5_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            materialProgressBar5.Value = e.ProgressPercentage;
+        }
+
+        private void backgroundWorker5_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            materialTextBox6.Text = e.Result.ToString();
         }
     }
 }
