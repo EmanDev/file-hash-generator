@@ -41,6 +41,9 @@ namespace HashGenerator
             toolTip1.SetToolTip(materialButton5, "Copy calculated SHA-256 to clipboard.");
             toolTip1.SetToolTip(materialButton6, "Copy calculated SHA-384 to clipboard.");
             toolTip1.SetToolTip(materialButton7, "Copy calculated SHA-512 to clipboard.");
+
+            // Disable Bug Functions Here
+            materialCheckbox5.Enabled = false;
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -99,7 +102,14 @@ namespace HashGenerator
                 }
                 else
                 {
-                    materialTextBox6.Text = "SHA-512 not selected.";
+                    if (materialCheckbox5.Enabled == false)
+                    {
+                        materialTextBox6.Text = "SHA-512 is disabled.";
+                    }
+                    else
+                    {
+                        materialTextBox6.Text = "SHA-512 not selected.";
+                    }
                 }
             }
         }
