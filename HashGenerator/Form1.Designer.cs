@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -63,6 +64,7 @@
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker4 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker5 = new System.ComponentModel.BackgroundWorker();
+            this.materialButton9 = new MaterialSkin.Controls.MaterialButton();
             this.SuspendLayout();
             // 
             // materialButton1
@@ -127,7 +129,7 @@
             // 
             this.materialCheckbox2.AutoSize = true;
             this.materialCheckbox2.Depth = 0;
-            this.materialCheckbox2.Location = new System.Drawing.Point(94, 146);
+            this.materialCheckbox2.Location = new System.Drawing.Point(78, 146);
             this.materialCheckbox2.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -151,7 +153,7 @@
             // 
             this.materialCheckbox3.AutoSize = true;
             this.materialCheckbox3.Depth = 0;
-            this.materialCheckbox3.Location = new System.Drawing.Point(185, 146);
+            this.materialCheckbox3.Location = new System.Drawing.Point(157, 146);
             this.materialCheckbox3.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox3.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -166,7 +168,7 @@
             // 
             this.materialCheckbox4.AutoSize = true;
             this.materialCheckbox4.Depth = 0;
-            this.materialCheckbox4.Location = new System.Drawing.Point(294, 146);
+            this.materialCheckbox4.Location = new System.Drawing.Point(254, 146);
             this.materialCheckbox4.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox4.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -181,7 +183,7 @@
             // 
             this.materialCheckbox5.AutoSize = true;
             this.materialCheckbox5.Depth = 0;
-            this.materialCheckbox5.Location = new System.Drawing.Point(404, 146);
+            this.materialCheckbox5.Location = new System.Drawing.Point(351, 146);
             this.materialCheckbox5.Margin = new System.Windows.Forms.Padding(0);
             this.materialCheckbox5.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialCheckbox5.MouseState = MaterialSkin.MouseState.HOVER;
@@ -211,7 +213,7 @@
             this.materialButton2.DrawShadows = true;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(521, 145);
+            this.materialButton2.Location = new System.Drawing.Point(454, 145);
             this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
@@ -497,11 +499,31 @@
             this.backgroundWorker5.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker5_ProgressChanged);
             this.backgroundWorker5.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker5_RunWorkerCompleted);
             // 
+            // materialButton9
+            // 
+            this.materialButton9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton9.Depth = 0;
+            this.materialButton9.DrawShadows = true;
+            this.materialButton9.HighEmphasis = true;
+            this.materialButton9.Icon = null;
+            this.materialButton9.Location = new System.Drawing.Point(580, 145);
+            this.materialButton9.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton9.Name = "materialButton9";
+            this.materialButton9.Size = new System.Drawing.Size(58, 36);
+            this.materialButton9.TabIndex = 26;
+            this.materialButton9.Text = "Help";
+            this.materialButton9.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton9.UseAccentColor = false;
+            this.materialButton9.UseVisualStyleBackColor = true;
+            this.materialButton9.Click += new System.EventHandler(this.MaterialButton9_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 530);
+            this.Controls.Add(this.materialButton9);
             this.Controls.Add(this.materialProgressBar5);
             this.Controls.Add(this.materialProgressBar4);
             this.Controls.Add(this.materialProgressBar3);
@@ -528,8 +550,10 @@
             this.Controls.Add(this.materialCheckbox1);
             this.Controls.Add(this.materialTextBox1);
             this.Controls.Add(this.materialButton1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.Sizable = false;
             this.Text = "File Hash Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -573,6 +597,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker3;
         private System.ComponentModel.BackgroundWorker backgroundWorker4;
         private System.ComponentModel.BackgroundWorker backgroundWorker5;
+        private MaterialSkin.Controls.MaterialButton materialButton9;
     }
 }
 

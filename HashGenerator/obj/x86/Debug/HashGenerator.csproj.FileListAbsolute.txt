@@ -9,3 +9,4 @@ C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator
 C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\obj\x86\Debug\HashGenerator.csproj.CopyComplete
 C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\obj\x86\Debug\HashGenerator.exe
 C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\obj\x86\Debug\HashGenerator.pdb
+C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\obj\x86\Debug\HashGenerator.Form2.resources

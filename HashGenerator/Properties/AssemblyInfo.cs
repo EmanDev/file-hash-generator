@@ -1,14 +1,13 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HashGenerator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("File Hash Generator")]
+[assembly: AssemblyDescription("A material designed tool that generates selected hashes from a selected file. Supports MD5, SHA-1, SHA-256, SHA-384, and SHA-512.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("EmanDev")]
 [assembly: AssemblyProduct("HashGenerator")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

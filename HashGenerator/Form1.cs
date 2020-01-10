@@ -421,5 +421,11 @@ namespace HashGenerator
             materialTextBox6.Text = e.Result.ToString();
             backgroundWorker5.CancelAsync();
         }
+
+        private void MaterialButton9_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            frm.Show();
+        }
     }
 }

@@ -8,3 +8,8 @@ C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator
 C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\obj\x86\Release\HashGenerator.csproj.CopyComplete
 C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\obj\x86\Release\HashGenerator.exe
 C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\obj\x86\Release\HashGenerator.pdb
+C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\obj\x86\Release\HashGenerator.Form2.resources
+C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\HashGenerator\obj\x86\Release\HashGenerator.csprojAssemblyReference.cache
+C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\Builds\HashGenerator.exe.config
+C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\Builds\HashGenerator.exe
+C:\Users\gamea\Documents\Visual Studio 2015\Projects\HashGenerator\Builds\HashGenerator.pdb
