@@ -16,18 +16,7 @@ namespace HashGenerator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            try
-            {
-                Application.Run(new Form1());
-            }
-            catch (Exception e)
-            {
-                if (e.InnerException != null)
-                {
-                    string err = e.InnerException.Message;
-                }
-            }
+            Application.Run(new Form1());
         }
     }
 }

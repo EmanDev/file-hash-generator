@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
-using MaterialSkin;
-using MaterialSkin.Controls;
+using System.Text;
+using System.Windows.Forms;
 
 namespace HashGenerator
 {
@@ -43,10 +38,10 @@ namespace HashGenerator
             toolTip1.SetToolTip(materialButton7, "Copy calculated SHA-512 to clipboard.");
 
             // Disable Bug Functions Here
-            materialCheckbox5.Enabled = false;
+            materialCheckbox5.Enabled = true;
         }
 
-        private void materialButton1_Click(object sender, EventArgs e)
+        private void MaterialButton1_Click(object sender, EventArgs e)
         {
             materialTextBox1.Text = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -55,7 +50,7 @@ namespace HashGenerator
             }
         }
 
-        private void materialButton8_Click(object sender, EventArgs e)
+        private void MaterialButton8_Click(object sender, EventArgs e)
         {
             materialTextBox2.Text = "";
             if (materialTextBox1.Text == "")
@@ -114,7 +109,7 @@ namespace HashGenerator
             }
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             string filepath = e.Argument.ToString();
 
@@ -184,29 +179,30 @@ namespace HashGenerator
             return hash.ToString();
         }
 
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BackgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             materialProgressBar1.Value = e.ProgressPercentage;
         }
 
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             materialTextBox2.Text = e.Result.ToString();
+            backgroundWorker1.CancelAsync();
         }
 
-        private void materialButton3_Click(object sender, EventArgs e)
+        private void MaterialButton3_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(materialTextBox2.Text);
         }
 
-        private void materialButton2_Click(object sender, EventArgs e)
+        private void MaterialButton2_Click(object sender, EventArgs e)
         {
             saveFileDialog1.ShowDialog();
             string exportedPath = saveFileDialog1.FileName;
             using (StreamWriter writeHash = new StreamWriter(exportedPath))
             {
                 writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                writeHash.WriteLine("Calculated hashes of " + openFileDialog1.SafeFileName);
+                writeHash.WriteLine("Calculated hashes of " + "'" + openFileDialog1.SafeFileName + "'");
                 writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
                 if (materialTextBox2.Text == "")
                 {
@@ -253,7 +249,7 @@ namespace HashGenerator
             MessageBox.Show("Hashes exported at " + exportedPath, "Exported Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
             string file_path = e.Argument.ToString();
             byte[] buffer;
@@ -280,17 +276,18 @@ namespace HashGenerator
             }
         }
 
-        private void backgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BackgroundWorker2_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             materialProgressBar2.Value = e.ProgressPercentage;
         }
 
-        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             materialTextBox3.Text = e.Result.ToString();
+            backgroundWorker2.CancelAsync();
         }
-        
-        private void backgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
+
+        private void BackgroundWorker3_DoWork(object sender, DoWorkEventArgs e)
         {
             string PathFile = e.Argument.ToString();
             byte[] buffer;
@@ -317,17 +314,18 @@ namespace HashGenerator
             }
         }
 
-        private void backgroundWorker3_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BackgroundWorker3_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             materialProgressBar3.Value = e.ProgressPercentage;
         }
 
-        private void backgroundWorker3_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackgroundWorker3_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             materialTextBox4.Text = e.Result.ToString();
+            backgroundWorker3.CancelAsync();
         }
 
-        private void backgroundWorker4_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorker4_DoWork(object sender, DoWorkEventArgs e)
         {
             string Path_File = e.Argument.ToString();
             byte[] buffer;
@@ -351,48 +349,50 @@ namespace HashGenerator
                     hasher.TransformFinalBlock(buffer, 0, 0);
                     e.Result = MakeHashStringSHA384(hasher.Hash);
                 }
-            }      
+            }
         }
 
-        private void backgroundWorker4_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BackgroundWorker4_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             materialProgressBar4.Value = e.ProgressPercentage;
         }
 
-        private void backgroundWorker4_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackgroundWorker4_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             materialTextBox5.Text = e.Result.ToString();
+            backgroundWorker4.CancelAsync();
         }
 
-        private void materialButton7_Click(object sender, EventArgs e)
+        private void MaterialButton7_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(materialTextBox6.Text);
         }
 
-        private void materialButton4_Click(object sender, EventArgs e)
+        private void MaterialButton4_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(materialTextBox3.Text);
         }
 
-        private void materialButton5_Click(object sender, EventArgs e)
+        private void MaterialButton5_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(materialTextBox4.Text);
         }
 
-        private void materialButton6_Click(object sender, EventArgs e)
+        private void MaterialButton6_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(materialTextBox5.Text);
         }
 
-        private void backgroundWorker5_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorker5_DoWork(object sender, DoWorkEventArgs e)
         {
-            string file_pathing = e.Argument.ToString();
+            string sha512path = e.Argument.ToString();
+
             byte[] buffer;
             int BytesRead;
             long size;
             long totalBytesRead = 0;
-            using (Stream file = File.OpenRead(file_pathing))
-                {
+            using (Stream file = File.OpenRead(sha512path))
+            {
                 size = file.Length;
                 using (HashAlgorithm hasher = SHA512.Create())
                 {
@@ -402,7 +402,7 @@ namespace HashGenerator
                         BytesRead = file.Read(buffer, 0, buffer.Length);
                         totalBytesRead += BytesRead;
                         hasher.TransformBlock(buffer, 0, BytesRead, null, 0);
-                        backgroundWorker1.ReportProgress((int)((double)totalBytesRead / size * 100));
+                        backgroundWorker5.ReportProgress((int)((double)totalBytesRead / size * 100));
                     }
                     while (BytesRead != 0);
                     hasher.TransformFinalBlock(buffer, 0, 0);
@@ -411,14 +411,15 @@ namespace HashGenerator
             }
         }
 
-        private void backgroundWorker5_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BackgroundWorker5_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             materialProgressBar5.Value = e.ProgressPercentage;
         }
 
-        private void backgroundWorker5_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackgroundWorker5_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             materialTextBox6.Text = e.Result.ToString();
+            backgroundWorker5.CancelAsync();
         }
     }
 }
