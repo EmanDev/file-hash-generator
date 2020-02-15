@@ -167,7 +167,7 @@
             this.Name = "Form2";
             this.ShowInTaskbar = false;
             this.Sizable = false;
-            this.Text = "HELP";
+            this.Text = "Help";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

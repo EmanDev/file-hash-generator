@@ -37,8 +37,8 @@ namespace HashGenerator
             toolTip1.SetToolTip(materialButton6, "Copy calculated SHA-384 to clipboard.");
             toolTip1.SetToolTip(materialButton7, "Copy calculated SHA-512 to clipboard.");
 
-            // Disable Bug Functions Here
-            materialCheckbox5.Enabled = true;
+            // Disable bugged tools here (add //fixed for fixed bugs)
+            materialCheckbox5.Enabled = true; //fixed
         }
 
         private void MaterialButton1_Click(object sender, EventArgs e)
@@ -53,57 +53,69 @@ namespace HashGenerator
         private void MaterialButton8_Click(object sender, EventArgs e)
         {
             materialTextBox2.Text = "";
+            materialTextBox3.Text = "";
+            materialTextBox4.Text = "";
+            materialTextBox5.Text = "";
+            materialTextBox6.Text = "";
             if (materialTextBox1.Text == "")
             {
-                MessageBox.Show("Please select a file to calculate.", "Browse File Path", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Error: No file selected, please select a file to calculate.", "Browse File Path", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (materialCheckbox1.Checked == true)
+                long length = new System.IO.FileInfo(materialTextBox1.Text).Length;
+                if (length == 0)
                 {
-                    backgroundWorker1.RunWorkerAsync(materialTextBox1.Text);
+                    MessageBox.Show("Error: Selected file is empty, please select another file.", "Browse File Path", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    materialTextBox2.Text = "MD5 not selected.";
-                }
-                if (materialCheckbox2.Checked == true)
-                {
-                    backgroundWorker2.RunWorkerAsync(materialTextBox1.Text);
-                }
-                else
-                {
-                    materialTextBox3.Text = "SHA-1 not selected.";
-                }
-                if (materialCheckbox3.Checked == true)
-                {
-                    backgroundWorker3.RunWorkerAsync(materialTextBox1.Text);
-                }
-                else
-                {
-                    materialTextBox4.Text = "SHA-256 not selected.";
-                }
-                if (materialCheckbox4.Checked == true)
-                {
-                    backgroundWorker4.RunWorkerAsync(materialTextBox1.Text);
-                }
-                else
-                {
-                    materialTextBox5.Text = "SHA-384 not selected.";
-                }
-                if (materialCheckbox5.Checked == true)
-                {
-                    backgroundWorker5.RunWorkerAsync(materialTextBox1.Text);
-                }
-                else
-                {
-                    if (materialCheckbox5.Enabled == false)
+                    if (materialCheckbox1.Checked == true)
                     {
-                        materialTextBox6.Text = "SHA-512 is disabled.";
+                        backgroundWorker1.RunWorkerAsync(materialTextBox1.Text);
                     }
                     else
                     {
-                        materialTextBox6.Text = "SHA-512 not selected.";
+                        materialTextBox2.Text = "MD5 not selected.";
+                    }
+                    if (materialCheckbox2.Checked == true)
+                    {
+                        backgroundWorker2.RunWorkerAsync(materialTextBox1.Text);
+                    }
+                    else
+                    {
+                        materialTextBox3.Text = "SHA-1 not selected.";
+                    }
+                    if (materialCheckbox3.Checked == true)
+                    {
+                        backgroundWorker3.RunWorkerAsync(materialTextBox1.Text);
+                    }
+                    else
+                    {
+                        materialTextBox4.Text = "SHA-256 not selected.";
+                    }
+                    if (materialCheckbox4.Checked == true)
+                    {
+                        backgroundWorker4.RunWorkerAsync(materialTextBox1.Text);
+                    }
+                    else
+                    {
+                        materialTextBox5.Text = "SHA-384 not selected.";
+                    }
+                    if (materialCheckbox5.Checked == true)
+                    {
+                        backgroundWorker5.RunWorkerAsync(materialTextBox1.Text);
+                    }
+                    else
+                    {
+                        if (materialCheckbox5.Enabled == false)
+                        {
+                            materialTextBox6.Text = "SHA-512 is disabled.";
+                        }
+                        else
+                        {
+                            materialTextBox6.Text = "SHA-512 not selected.";
+                        }
                     }
                 }
             }
@@ -192,7 +204,14 @@ namespace HashGenerator
 
         private void MaterialButton3_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(materialTextBox2.Text);
+            if (materialTextBox2.Text == "")
+            {
+                MessageBox.Show("Error: No hash available to copy.", "Copy Hash", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Clipboard.SetText(materialTextBox2.Text);
+            }
         }
 
         private void MaterialButton2_Click(object sender, EventArgs e)
@@ -365,22 +384,50 @@ namespace HashGenerator
 
         private void MaterialButton7_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(materialTextBox6.Text);
+            if (materialTextBox6.Text == "")
+            {
+                MessageBox.Show("Error: No hash available to copy.", "Copy Hash", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Clipboard.SetText(materialTextBox6.Text);
+            }
         }
 
         private void MaterialButton4_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(materialTextBox3.Text);
+            if (materialTextBox3.Text == "")
+            {
+                MessageBox.Show("Error: No hash available to copy.", "Copy Hash", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Clipboard.SetText(materialTextBox3.Text);
+            }
         }
 
         private void MaterialButton5_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(materialTextBox4.Text);
+            if (materialTextBox4.Text == "")
+            {
+                MessageBox.Show("Error: No hash available to copy.", "Copy Hash", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Clipboard.SetText(materialTextBox4.Text);
+            }
         }
 
         private void MaterialButton6_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(materialTextBox5.Text);
+            if (materialTextBox5.Text == "")
+            {
+                MessageBox.Show("Error: No hash available to copy.", "Copy Hash", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Clipboard.SetText(materialTextBox5.Text);
+            }
         }
 
         private void BackgroundWorker5_DoWork(object sender, DoWorkEventArgs e)
