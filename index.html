@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hash Generator Tool - EmanDev</title>
+    <meta name="description" content="A material designed tool that generates selected hashes from a selected file. Supports MD5, SHA-1, SHA-256, SHA-384, and SHA-512.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Include Required Files-->
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <!--Include Optional Styles-->
+    <link rel="shortcut icon" type="image/png" href="https://lh3.googleusercontent.com/pGiA3Rkwl_HwECT7IV2ejeWQBSZ7LgVw2hhlOjuN_NlReqYzoGZZEays0fqzUpWjRiMDWao9bAeWpAs6QHPwumTHs7i5Q8pQp7UrD1M_ID_6GA0XSOZDC6aZy3NqPMej-YLpS3cjd8Y7dZBVJbQoiwMattOL4dwqS6AoZwj52F7Bhk7R8M2dKEb374JQtXZwqS8E0GwoqH-pjrrWUPnPqgoMD4DJ4yacaSjGWUSS0hnv6zSPFQ94ekG2j0OKuVPwTUPvtlykxrjujE_XBeNbyfGfX-g7qLk7XeiPkNVtHFoGGWXBSjVEorc6KHfnRoDgeWU9qz9pqABHvlOaSipxC3t4nSRMWgWyJ8c49z5Mv-K5KEyg5k1kx4NMNbHvi9absJ-xi8kMZ_XGE610qL1QtuUVt9aYgoRPgBgfzu-PjYTDwPOhCq2ijhpzFXo7C1Xl8EphpfCIcTCA59gDdvv_QVN1_lwf8xFbzY08FiKh12ckEzzrBLE2xlTVFiVw-W0E_mdMbfyzKwRLhQgfkz3My48TYp9j3KuHZNtsu1JuCGD_cQgDX1_S8zOmEAqGcuM2mN2daCdKLh2IO7I24NPW7cmKCnmyAZD1AU60f3Hl5ZhRe6ToyuicUngBJyAYCq2WlSi6VLJjo9ULUyNkrJMQyFth2XLcnkE=s96-no" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/ekko-lightbox.css">
+</head>
+
+<body scroll="no">
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="loader_bg">
+        <div class="loader">
+        </div>
+    </div>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="https://emandev.github.io/">EmanDev</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#information">File Hash Generator</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+            </ul>
+            <section class="form-inline my-2 my-lg-0">
+                <span class="navbar-brand">Version 1.0</span>
+                <a class="btn btn-outline-success my-2 my-sm-0" href="https://emandev.github.io/downloads.html" target="_blank" data-toggle="tooltip" data-placement="bottom" title="File Hash Generator v1.0">Download</a>
+            </section>
+        </div>
+    </nav>
+
+    <main>
+        <!--Top Content-->
+        <div id="information" class="row no-gutters">
+            <div class="top-content">
+                <div class="container text-white text-center">
+                    <h1>File Hash Generator</h1>
+                    <br>
+                    <p id="sub-description">
+                        A material designed tool that generates selected hashes from a selected file. Supports MD5, SHA-1, SHA-256, SHA-384, and SHA-512.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Middle Content-->
+        <div id="features" class="row no-gutters">
+            <div class="col no-gutters">
+                <div class="leftside">
+                    <div class="text-center text-white my-3 py-3">
+                        <h2 class="display-5">Flexible</h2>
+                        <p class="lead">
+                            File Hash Generator is flexible with its simple yet very helpful options for the users to use.
+                        </p>
+                        <div class="text-center my-3 py-3">
+                            <a href="img/fhg1.jpg" data-toggle="lightbox" data-title="File Hash Generator: Before"><img src="img/fhg1.jpg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col no-gutters">
+                <div class="rightside">
+                    <div class="text-center text-white my-3 py-3">
+                        <h2 class="display-5">Material Designed</h2>
+                        <p class="lead">
+                            File Hash Generator is a materially designed tool similar from the stuff created at <a href="htttps://google.com/ncr" target="_blank">Google</a>.
+                        </p>
+                        <div class="text-center my-3 py-3">
+                            <a href="img/fhg2.jpg" data-toggle="lightbox" data-title="File Hash Generator: After"><img src="img/fhg2.jpg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--Required Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('body').bootstrapMaterialDesign();
+        });
+    </script>
+    <!--Optional Scripts-->
+    <script src="js/ekko-lightbox.js"></script>
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        setTimeout(function () {
+            $('.loader_bg').fadeToggle();
+        }, 2500);
+    </script>
+</body>
+
+</html>
