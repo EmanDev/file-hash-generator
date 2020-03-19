@@ -1,4 +1,0 @@
-Local Debug - out from Visual Studio 2015:
-
-Error01: BackgroundWorker is currently busy and cannot run multiple tasks concurrently.
-Error02: System.InvalidOperationException: This operation has already had OperationCompleted called on it and further calls are illegal.
