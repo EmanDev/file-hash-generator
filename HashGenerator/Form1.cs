@@ -216,62 +216,70 @@ namespace HashGenerator
 
         private void MaterialButton2_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (materialTextBox1.Text == "")
             {
-                saveFileDialog1.ShowDialog();
-                string exportedPath = saveFileDialog1.FileName;
-                using (StreamWriter writeHash = new StreamWriter(exportedPath))
-                {
-                    writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                    writeHash.WriteLine("Calculated hashes of " + "'" + openFileDialog1.SafeFileName + "'");
-                    writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                    if (materialTextBox2.Text == "")
-                    {
-                        writeHash.Write("");
-                    }
-                    else
-                    {
-                        writeHash.WriteLine("MD5: " + materialTextBox2.Text);
-                    }
-                    if (materialTextBox3.Text == "")
-                    {
-                        writeHash.Write("");
-                    }
-                    else
-                    {
-                        writeHash.WriteLine("SHA-1: " + materialTextBox3.Text);
-                    }
-                    if (materialTextBox4.Text == "")
-                    {
-                        writeHash.Write("");
-                    }
-                    else
-                    {
-                        writeHash.WriteLine("SHA-256: " + materialTextBox4.Text);
-                    }
-                    if (materialTextBox5.Text == "")
-                    {
-                        writeHash.Write("");
-                    }
-                    else
-                    {
-                        writeHash.WriteLine("SHA-384: " + materialTextBox5.Text);
-                    }
-                    if (materialTextBox6.Text == "")
-                    {
-                        writeHash.Write("");
-                    }
-                    else
-                    {
-                        writeHash.WriteLine("SHA-512: " + materialTextBox6.Text);
-                    }
-                    writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
-                }
-                MessageBox.Show("Hashes exported at " + exportedPath, "Exported Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("File path is empty", "Exported Hash", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else
             {
-                MessageBox.Show("No hashes exported", "Exported Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    saveFileDialog1.ShowDialog();
+                    string exportedPath = saveFileDialog1.FileName;
+                    using (StreamWriter writeHash = new StreamWriter(exportedPath))
+                    {
+                        writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                        writeHash.WriteLine("Calculated hashes of " + "'" + openFileDialog1.SafeFileName + "'");
+                        writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                        if (materialTextBox2.Text == "")
+                        {
+                            writeHash.Write("");
+                        }
+                        else
+                        {
+                            writeHash.WriteLine("MD5: " + materialTextBox2.Text);
+                        }
+                        if (materialTextBox3.Text == "")
+                        {
+                            writeHash.Write("");
+                        }
+                        else
+                        {
+                            writeHash.WriteLine("SHA-1: " + materialTextBox3.Text);
+                        }
+                        if (materialTextBox4.Text == "")
+                        {
+                            writeHash.Write("");
+                        }
+                        else
+                        {
+                            writeHash.WriteLine("SHA-256: " + materialTextBox4.Text);
+                        }
+                        if (materialTextBox5.Text == "")
+                        {
+                            writeHash.Write("");
+                        }
+                        else
+                        {
+                            writeHash.WriteLine("SHA-384: " + materialTextBox5.Text);
+                        }
+                        if (materialTextBox6.Text == "")
+                        {
+                            writeHash.Write("");
+                        }
+                        else
+                        {
+                            writeHash.WriteLine("SHA-512: " + materialTextBox6.Text);
+                        }
+                        writeHash.WriteLine("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+                    }
+                    MessageBox.Show("Hashes exported at " + exportedPath, "Exported Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No hashes exported", "Exported Hash", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 

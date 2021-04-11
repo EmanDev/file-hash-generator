@@ -97,7 +97,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin">
-      <HintPath>..\..\..\..\Frameworks\MaterialSkin.dll</HintPath>
+      <HintPath>..\..\gmdr\packages\MaterialSkin.2.2.1.2\lib\net461\MaterialSkin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
